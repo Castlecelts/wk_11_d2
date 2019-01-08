@@ -34,4 +34,8 @@ public class Bus {
 			passengers.add(person);
 		}
 	}
+
+	public void removePassenger() {
+		passengers.remove(0);
+	}
 }
