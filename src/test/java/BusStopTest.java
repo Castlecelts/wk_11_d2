@@ -21,4 +21,24 @@ public class BusStopTest {
 		assertEquals(0,stop.getQueue().size());
 	}
 
+	@Test
+	public void canAddPersonToQueue() {
+		stop.addPerson(new Person());
+		stop.addPerson(new Person());
+		assertEquals(2,stop.getQueue().size());
+	}
+
+	@Test
+	public void canRemovePersonFromQueue() {
+		Person firstInLine = new Person();
+		Person secondInLine = new Person();
+		stop.addPerson(firstInLine);
+		stop.addPerson(secondInLine);
+		assertEquals(2,stop.getQueue().size());
+		Person removed = stop.removePersonFromQueue();
+		assertEquals(1,stop.getQueue().size());
+		assertEquals(removed, firstInLine);
+	}
+
+
 }

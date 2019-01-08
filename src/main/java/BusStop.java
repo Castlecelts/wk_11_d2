@@ -25,4 +25,12 @@ public class BusStop {
 	public void setQueue(ArrayList<Person> queue) {
 		this.queue = queue;
 	}
+
+	public void addPerson(Person person) {
+		this.queue.add(person);
+	}
+
+	public Person removePersonFromQueue() {
+		return this.queue.remove(0);
+	}
 }
