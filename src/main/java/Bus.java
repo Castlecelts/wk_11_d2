@@ -11,6 +11,7 @@ public class Bus {
 	public Bus(Integer busCapacity, String busDestination) {
 		this.capacity = busCapacity;
 		this.destination = busDestination;
+		passengers = new ArrayList<>();
 	}
 
 	public int getCapacity() {
@@ -19,5 +20,18 @@ public class Bus {
 
 	public String getDestination() {
 		return destination;
+	}
+
+	public int getPassengerCount() {
+		return passengers.size();
+	}
+
+	public void addPassenger(Person person) {
+		if (getPassengerCount() == getCapacity()){
+			return;
+		}
+		else{
+			passengers.add(person);
+		}
 	}
 }
